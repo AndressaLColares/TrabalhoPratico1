@@ -1,5 +1,18 @@
 # Trabalho Pratico 1 - Desenvolvimento de uma API REST para Gerenciamento de Entidades com Persistência em CSV com FastAPI
 
+### ⚠ Aviso
+
+O vídeo incluído neste repositório não pode ser reproduzido diretamente no navegador. Para assistir, é necessário baixá-lo utilizando a opção **Raw** no GitHub.
+
+#### Passos para baixar:
+1. Acesse o vídeo pelo seguinte link: [Trabalho-Prático-1.mp4](https://github.com/AndressaLColares/TrabalhoPratico1/blob/main/Video%20Explicativo/Trabalho-Pr%C3%A1tico-1.mp4).
+2. Clique no botão **Raw** para iniciar o download.
+
+Após baixar o arquivo, abra-o com um player de vídeo compatível.
+
+
+
+
 ## Descrição Geral
 
 Neste trabalho, foi desenvolvida uma aplicação web simples que utiliza uma API REST criada com o framework FastAPI. A API tem como objetivo gerenciar entidades relacionadas ao domínio escolhido no Trabalho Prático 1 (TP1). A principal funcionalidade da aplicação é permitir a manipulação de dados armazenados em arquivos CSV, com operações como leitura, escrita, atualização e exclusão de registros.
@@ -71,3 +84,5 @@ Para rodar a API localmente, execute o seguinte comando:
 
 ```bash
 python -m uvicorn main:app --reload
+
+

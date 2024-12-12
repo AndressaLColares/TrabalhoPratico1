@@ -4,6 +4,7 @@ import hashlib
 from typing import List
 from fastapi import HTTPException
 from models import Item
+from config import CSV_FILE  
 
 def ler_dados_csv(csv_file: str) -> List[Item]:
     itens = []
@@ -42,3 +43,73 @@ def gerar_proximo_id(itens: List[Item]) -> int:
     if not itens:
         return 1
     return max(item.id for item in itens) + 1
+
+def filtrar_reino(reino: str) -> List[Item]:
+    itens = ler_dados_csv(CSV_FILE)  
+    itens_filtrados: List[Item] = [] 
+    for item in itens:
+        if item.reino == reino:
+            itens_filtrados.append(item)
+    if itens_filtrados:
+        return itens_filtrados
+    raise HTTPException(status_code=404, detail="Reino não encontrado")
+
+def filtrar_filo(filo: str) -> List[Item]:
+    itens = ler_dados_csv(CSV_FILE)  
+    itens_filtrados: List[Item] = []  
+    for item in itens:
+        if item.filo == filo:
+            itens_filtrados.append(item)
+    if itens_filtrados:
+        return itens_filtrados
+    raise HTTPException(status_code=404, detail="Filo não encontrado")
+
+def filtrar_classe(classe: str) -> List[Item]:
+    itens = ler_dados_csv(CSV_FILE) 
+    itens_filtrados: List[Item] = []  
+    for item in itens:
+        if item.classe == classe:
+            itens_filtrados.append(item)
+    if itens_filtrados:
+        return itens_filtrados
+    raise HTTPException(status_code=404, detail="Classe não encontrada")
+
+def filtrar_ordem(ordem: str) -> List[Item]:
+    itens = ler_dados_csv(CSV_FILE)  
+    itens_filtrados: List[Item] = []  
+    for item in itens:
+        if item.ordem == ordem:
+            itens_filtrados.append(item)
+    if itens_filtrados:
+        return itens_filtrados
+    raise HTTPException(status_code=404, detail="Ordem não encontrada")
+
+def filtrar_familia(familia: str) -> List[Item]:
+    itens = ler_dados_csv(CSV_FILE)  
+    itens_filtrados: List[Item] = [] 
+    for item in itens:
+        if item.familia == familia:
+            itens_filtrados.append(item)
+    if itens_filtrados:
+        return itens_filtrados
+    raise HTTPException(status_code=404, detail="Familia não encontrada")
+
+def filtrar_genero(genero: str) -> List[Item]:
+    itens = ler_dados_csv(CSV_FILE)  
+    itens_filtrados: List[Item] = [] 
+    for item in itens:
+        if item.genero == genero:
+            itens_filtrados.append(item)
+    if itens_filtrados:
+        return itens_filtrados
+    raise HTTPException(status_code=404, detail="Genero não encontrado")
+
+def filtrar_especie(especie: str) -> List[Item]:
+    itens = ler_dados_csv(CSV_FILE)  
+    itens_filtrados: List[Item] = []  
+    for item in itens:
+        if item.especie == especie:
+            itens_filtrados.append(item)
+    if itens_filtrados:
+        return itens_filtrados
+    raise HTTPException(status_code=404, detail="Especie não encontrada")

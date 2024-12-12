@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse
 from typing import List
 from models import Item
-from utils import ler_dados_csv, escrever_dados_csv, calcular_hash, gerar_proximo_id
+from utils import filtrar_classe, filtrar_especie, filtrar_familia, filtrar_filo, filtrar_genero, filtrar_ordem, filtrar_reino, ler_dados_csv, escrever_dados_csv, calcular_hash, gerar_proximo_id
 from config import CSV_FILE, ZIP_FILE, LOG_FILE
 import zipfile
 import logging
@@ -79,3 +79,22 @@ def deletar_item(item_id: int):
     escrever_dados_csv(itens_filtrados, CSV_FILE)
     logging.info(f"Espécie {item_id} deletada com sucesso")
     return {"mensagem": "Item deletado com sucesso"}
+
+@router.get("/itens/{categoria}/{nome}", response_model=List[Item])
+def filtrar_categoria(categoria: str, nome: str):
+    match categoria:
+        case "reino":
+            return filtrar_reino(nome)
+        case "filo":
+            return filtrar_filo(nome)
+        case "classe":
+            return filtrar_classe(nome)
+        case "ordem":
+            return filtrar_ordem(nome)
+        case "familia":
+            return filtrar_familia(nome)
+        case "genero":
+            return filtrar_genero(nome)
+        case "especie":
+            return filtrar_especie(nome)
+    raise HTTPException(status_code=404, detail="Categoria não encontrada")

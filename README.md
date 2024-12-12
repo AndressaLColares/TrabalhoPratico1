@@ -1,4 +1,4 @@
-# TrabalhoPratico1# Trabalho Prático 1 - Desenvolvimento de uma API REST para Gerenciamento de Entidades com Persistência em CSV com FastAPI
+# Trabalho Pratico 1 - Desenvolvimento de uma API REST para Gerenciamento de Entidades com Persistência em CSV com FastAPI
 
 ## Descrição Geral
 
@@ -17,7 +17,7 @@ O objetivo principal desse trabalho foi praticar o desenvolvimento de APIs REST 
 ## Equipe
 
 - **Andressa Colares - 471151**
-- **Carlos Ryan Santos**
+- **Carlos Ryan Santos - 473007**
 
 ## Cadeira
 
